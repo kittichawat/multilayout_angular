@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
@@ -8,10 +9,15 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private titleService:Title) { }
+  constructor( private titleService:Title,private auth:AuthService) { }
 
   ngOnInit() {
     this.titleService.setTitle("Home");
+  }
+
+  checkLogin()
+  {
+    this.auth.login("admin","admin")
   }
 
 }

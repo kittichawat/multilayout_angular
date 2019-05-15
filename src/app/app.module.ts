@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 //Form and Validation
@@ -15,6 +16,11 @@ import { SettingComponent } from './backend/setting/setting.component';
 import { HomeComponent } from './frontend/home/home.component';
 import { FrontendLayoutComponent } from './_layout/frontend-layout/frontend-layout.component';
 import { BackendLayoutComponent } from './_layout/backend-layout/backend-layout.component';
+//HttpClientModule
+import { HttpClientModule} from '@angular/common/http';
+//Service
+import { AuthService } from './auth.service';
+import { DataService } from './data.service';
 
 
 
@@ -34,9 +40,13 @@ import { BackendLayoutComponent } from './_layout/backend-layout/backend-layout.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+   AuthService,
+   DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

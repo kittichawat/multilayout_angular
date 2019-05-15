@@ -1,3 +1,27 @@
-<p>
-  home works!
-</p>
+<div class="jumbotron">
+  <h1 class="display-3">Home page</h1>
+  <p class="lead">description</p>
+  <hr class="my-2">
+</div>
+<div class="container">
+  <p>{{'IT Genius' | uppercase}}</p>
+  <p>{{'IT Genius' | lowercase}}</p>
+  <p>{{ 12345 | number}}</p>
+  <p>{{ 12345 | number:'6.'}}</p>
+  <p>{{ 12345 | number:'.2'}}</p>
+  <p>{{ 0.8 | percent }}</p>
+  <p>{{ 0.8 | percent: '.3' }}</p>
+  <p>{{ 10.6 | currency: 'EUR' }}</p>
+  <p>{{ 10.6 | currency : 'USD':true }}</p>
+  <p>{{ 10.6 | currency : 'USD':true:'.2' }}</p>
+  <p>{{ '1988/05/22' | date:'dd/MM/yyyy' }}</p>
+  <p>{{ '1988/05/22' | date:'longDate'}}</p>
+
+
+
+
+
+
+  <button type="button" class="btn btn-primary" (click)="checkLogin()">Check Login</button>
+</div>
+

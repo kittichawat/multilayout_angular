@@ -1,4 +1,6 @@
+import { DataService } from './../../data.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-service',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceComponent implements OnInit {
 
-  constructor() { }
+  //รับค่าจาก http result
+  resultData:Object
+
+  constructor(private data:DataService) { }
 
   ngOnInit() {
+    this.data.getData().subscribe(result=>{
+      this.resultData = result['result'];
+      console.log(this.resultData)
+    })
   }
 
 }
