@@ -1,0 +1,56 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Leave your message</h1>
+    <p class="lead">Form for contact us</p>
+    <hr class="my-2">
+
+    <p class="lead">
+     
+    </p>
+  </div>
+</div>
+<div class="container">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+    <h5 *ngIf="success">Validate Success</h5>
+
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-3 col-form-label">FistName</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="firstname" id="firstname" formControlName="firstname" [ngClass]="{'is-invalid':submitted && f.firstname.errors }">
+        <div *ngIf="submitted && f.firstname.errors?.required">Firstname is required</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-3 col-form-label">LastName</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="lastname" id="lastname" formControlName="lastname" [ngClass]="{'is-invalid':submitted && f.lastname.errors }">
+        <div *ngIf="submitted && f.lastname.errors?.required">Lastname is required</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-3 col-form-label">Email</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="emails" id="emails" [ngClass]="{'is-invalid':submitted && f.emails.errors }" formControlName="emails">
+        <div *ngIf="submitted && f.emails.errors?.required">Email is required</div>
+        <div *ngIf="submitted && f.emails?.errors?.email">Email not a Format address</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-3 col-form-label">Tel</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="tel" class="form-control" name="tel" id="tel" [ngClass]="{'is-invalid': submitted && f.tel.errors?.required}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputName" class="col-sm-3 col-form-label"></label>
+      <div class="col-sm-9">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
